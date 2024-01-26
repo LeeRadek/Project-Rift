@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CameraController : MonoBehaviour
 {
     public int speed = 1;
 
-    
+
 
     void Start()
     {
@@ -52,7 +49,7 @@ public class CameraController : MonoBehaviour
 
         transform.position += moveVector * Time.deltaTime;
     }
-    
+
     void CenterCamera()
     {
         Vector3 centerPos = new Vector3(GameManager.Instance.selectedPlayer.transform.position.x, transform.position.y, GameManager.Instance.selectedPlayer.transform.position.z);

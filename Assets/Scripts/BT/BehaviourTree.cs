@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BehaviourTree : MonoBehaviour
 {
@@ -12,8 +9,8 @@ public class BehaviourTree : MonoBehaviour
     {
         root = new Selector();
         var newSequence = new Sequence();
-        
-        
+
+
 
         root.AddChild(newSequence);
     }

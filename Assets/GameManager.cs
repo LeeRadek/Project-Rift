@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
     public AIController selectedPlayer;
     private Vector3 dir;
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
         GameController.OnInventory += ShowInventory;
         lineRen = selectedPlayer.GetComponent<LineRenderer>();
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         GetDirection();
         DrawTrack();
         SpawnTrace();
-        
+
     }
 
     void GetDirection()
@@ -105,13 +105,12 @@ public class GameManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
 
         RaycastHit hit;
-        
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, 10))
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, 10))
         {
             Canvas canv = hit.collider.gameObject.transform.GetChild(0).GetComponent<Canvas>();
-            bool isVisable = false;
 
-            
+
             if (canv != null)
             {
                 canv.gameObject.SetActive(!canv.gameObject.activeSelf);
